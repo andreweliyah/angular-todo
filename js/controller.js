@@ -43,6 +43,11 @@ angular.module('RouteControllers', [])
                 $scope.loginUser.password = $scope.user.password;
                 $scope.data={username: $scope.loginUser.username, password: $scope.loginUser.password};
                  UserAPIService.callAPI(URL + "accounts/api-token-auth/", $scope.data).then(function(results) {
+                    console.log(results);
+                    if(results.status>=400&&results.status<500)
+                    {
+                        alert(results.data.non_field_errors[0]);
+                    }
                     $scope.token = results.data.token;
                     store.set('username', $scope.loginUser.username);
                     store.set('authToken', $scope.token);
