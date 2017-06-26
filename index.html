@@ -10,9 +10,14 @@
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
     <style type="text/css">
-    	body {
+    	body 
+        {
     		padding-top: 70px;
     	}
+        #main
+        {
+            padding: 0 20%;
+        }
     </style>
 </head>
 <body>
@@ -36,7 +41,7 @@
 			</ul>
 		</div>
 	</nav>
-	<div ng-view>
+	<div id='main' ng-view>
 
 	</div>
 	<script src="js/app.js"></script>
